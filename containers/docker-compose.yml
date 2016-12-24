@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  node:
+    build: ./node
+    command: npm run start
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./node:/usr/src/app
+      - /usr/src/app/node_modules
+
+  nginx:
+    build: ./nginx
+    depends_on:
+      - node
+    ports:
+      - "80:80"

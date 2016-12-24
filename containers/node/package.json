@@ -1,0 +1,33 @@
+{
+  "name": "experimental",
+  "main": "server.js",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Hensonism <adam@hensonism.com>",
+  "description": "Experimental",
+  "contributors": [
+    {
+      "name": "Adam Henson",
+      "email": "adam@hensonism.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamhenson/experimental.git"
+  },
+  "scripts": {
+    "start": "concurrent --kill-others \"npm run start-http\"",
+    "start-http": "nodemon ./servers/http-cluster.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "modulizer": "^2.0.9",
+    "errorhandler": "^1.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^0.1.1"
+  },
+  "engines": {
+    "node": "6.2.0"
+  }
+}
